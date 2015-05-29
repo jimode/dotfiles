@@ -1,4 +1,3 @@
-# dotfiles
 ##Cloning onto another machine
 
 When you’re working with a new machine onto which you’d like to clone your configuration, you clone the repository from GitHub, and delete any existing versions of those files in your home directory to replace them with symbolic links into your repository, like so:
