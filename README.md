@@ -6,13 +6,13 @@ $ git clone git@github.com:tejr/dotfiles.git .dotfiles
 
 $ rm -r .vim .vimrc .screenrc .gitconfig
 
-$ ln -s .dotfiles/vim .vim
+$ ln -s dotfiles/vim .vim
 
-$ ln -s .dotfiles/vimrc .vimrc
+$ ln -s dotfiles/vimrc .vimrc
 
-$ ln -s .dotfiles/screenrc .screenrc
+$ ln -s dotfiles/screenrc .screenrc
 
-$ ln -s .dotfiles/gitconfig .gitconfig
+$ ln -s dotfiles/gitconfig .gitconfig
 
 Finally, if you come back to use this machine later after you’ve tweaked these configuration files a bit and pushed them to GitHub, you can update them by just running a pull:
 
