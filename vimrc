@@ -7,8 +7,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-execute pathogen#infect()
-
 let mapleader = ","
 
 syntax enable
@@ -66,8 +64,8 @@ set incsearch
 set showmatch
 
 set winwidth=84
-set winheight=5
-set winminheight=5
+set winheight=25
+set winminheight=20
 set winheight=999
 
 set list
