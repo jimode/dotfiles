@@ -84,10 +84,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias reviews="cd ~/reviews-and-advice"
-alias db_setup="bundle exec rake db:drop db:create db:migrate db:seed"
+alias reviews="cd ~/which/reviews-and-advice"
+alias db_setup="bundle exec rake db:drop db:create db:migrate"
+alias db_seed="bundle exec rake db:seed"
 
 alias black_panther="cd ~/Sites/black_panther"
+alias rspec_lynda="cd ~/Documents/Tools/Ex_Files_UsingRSpecTesting/my_exercises/car_project"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

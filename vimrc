@@ -28,8 +28,9 @@ set backspace=indent,eol,start
 set ts=2 sts=2 sw=2 expandtab
 set smartindent
 set number
+set relativenumber
 set showcmd
-
+set laststatus=2
 " Abbreviations
 inoreabbrev teh the
 cnoreabbrev Wq wq
@@ -48,6 +49,8 @@ nnoremap <leader>a :Ack
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader><space> :noh<CR>
+" Strip all trailing whitespace in the current file.
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap / /\v
 nnoremap ? ?\v
 
@@ -58,14 +61,20 @@ vnoremap > >gv nnoremap n nzz
 nnoremap N Nzz
 nnoremap Y y$
 
+" ============ CUSTOM MAPPINGS =============
+" gO to create a new line below cursor in normal mode
+nmap g<C-O> o<ESC>k
+" g<Ctrl+o> to create a new line above cursor (Ctrl to prevent collision with 'g o' command)
+nmap gO O<ESC>j
+
 set smartcase
 set gdefault
 set incsearch
 set showmatch
 
 set winwidth=84
-set winheight=25
-set winminheight=20
+set winheight=5
+set winminheight=5
 set winheight=999
 
 set list
@@ -111,9 +120,11 @@ augroup CucumberCmds
 augroup END
 
 " ---------------------------------------------------------------------------------
-" 6 multiple windows
+" 6 multiple windows - convenient shortcut for window ops
 " ---------------------------------------------------------------------------------
-"Convenient shortcut for window ops
+
+"open a new vertical split and switch over to it.
+nnoremap <leader>w <C-w>v<C-w>l
 map <leader>h <C-W>h
 map <leader>j <C-W>j
 map <leader>k <C-W>k
@@ -121,19 +132,17 @@ map <leader>l <C-W>l
 
 map <leader>H <C-W>H
 map <leader>J <C-W>J
-map <leader>K <C-W>
-map <leader>L <C-W>
-map <leader>w <C-W>w
-map <leader>n <C-W>n
-map <leader>q <C-W>q
-map <leader>s <C-W>s
-map <leader>v <C-W>v
-map <leader>t <C-W>
-map <leader>b <C-W>
-map <leader>o <C-W>o
-map <Leader>vi :tabe ~/.vimrc<CR>
+map <leader>K <C-W>K
+map <leader>L <C-W>L
+"map <leader>w <C-W>w
+"map <leader>n <C-W>n
+"map <leader>q <C-W>q
+"map <leader>s <C-W>s
+"map <leader>v <C-W>v
+"map <leader>t <C-W>
+"map <leader>b <C-W>
+"map <leader>o <C-W>o map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
-
 function! InsertTabWrapper()
   let col = col(".") - 1
   if !col || getline(".")[col-1] !~ '\k'
@@ -144,6 +153,18 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-p>
+
+" Toggle between relative or absolute numbering.
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
 
 "map <C-=><esc>:res +5<CR>
 "map <C--> <esc>:res -5<CR>

@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/jodeyem/Sites/dojo_rules'
-let g:netrw_dirhist_2='/Users/jodeyem'
-let g:netrw_dirhist_3='/Users/jodeyem/reviews-and-advice'
-let g:netrw_dirhist_4='/Users/jodeyem/Documents/Vim'
-let g:netrw_dirhist_5='/Users/jodeyem/reviews-and-advice'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/jodeyem/which/reviews-and-advice'
+let g:netrw_dirhist_2='/Users/jodeyem/Documents/Tools/Ex_Files_UsingRSpecTesting/my_exercises/car_project'
+let g:netrw_dirhist_3='/Users/jodeyem/which'
+let g:netrw_dirhist_4='/Users/jodeyem/which/reviews-and-advice'
