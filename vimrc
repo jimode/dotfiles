@@ -1,3 +1,25 @@
+set nocompatible
+filetype off
+
+" Vundle {{{
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'whatyouhide/vim-gotham'
+
+
+call vundle#end()
+filetype plugin indent on
+
+" }}}
+
+
+
+
+
+
 " pathogen - must come first
 execute pathogen#infect()
 
@@ -89,8 +111,9 @@ set cursorline
 
 " Solarized theme
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme gotham
+"colorscheme solarized
+filetype plugin indent on
 
 " match ErrorMsg '\%>80v.\+'
 " set cc=80

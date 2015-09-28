@@ -85,11 +85,16 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias reviews="cd ~/which/reviews-and-advice"
+alias reviews_smoke="cd ~/which/reviews-and-advice-smoke-tests"
+alias records="cd ~/which/record-linkage-service"
 alias db_setup="bundle exec rake db:drop db:create db:migrate"
 alias db_seed="bundle exec rake db:seed"
 
 alias black_panther="cd ~/Sites/black_panther"
 alias rspec_lynda="cd ~/Documents/Tools/Ex_Files_UsingRSpecTesting/my_exercises/car_project"
+
+# JMeter
+alias jmeter="~/Documents/workspace/apache-jmeter-2.13/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
