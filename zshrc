@@ -45,11 +45,11 @@ ZSH_THEME="doubleend"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git )
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin/mysql/lib:$PATH
 
 export PATH=“/usr/local/bin/rbenv:${PATH}”
 eval "$(rbenv init -)"
@@ -86,9 +86,11 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias reviews="cd ~/which/reviews-and-advice"
 alias reviews_smoke="cd ~/which/reviews-and-advice-smoke-tests"
+alias nodejs="cd ~/which/nodejs-server-side-renderer"
 alias records="cd ~/which/record-linkage-service"
 alias db_setup="bundle exec rake db:drop db:create db:migrate"
 alias db_seed="bundle exec rake db:seed"
+alias be="bundle exec"
 
 alias black_panther="cd ~/Sites/black_panther"
 alias rspec_lynda="cd ~/Documents/Tools/Ex_Files_UsingRSpecTesting/my_exercises/car_project"
@@ -98,3 +100,22 @@ alias jmeter="~/Documents/workspace/apache-jmeter-2.13/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Release notes rake job
+# GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73 rake release:notes["v1.11.0","v1.12.0"]
+export GITHUB_ACCESS_TOKEN=c54a843521609da4cc0aa6ac240074f6c96f6f73
+ctags=/usr/local/bin/ctags
+
+export NVM_DIR="/Users/jodeyem/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Tmux stuff
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+
+ensure_tmux_is_running
