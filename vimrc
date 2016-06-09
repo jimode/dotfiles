@@ -179,7 +179,7 @@ set previewheight=20
 
 " Set how new splits open
 set splitbelow
-set splitright
+"set splitright
 
 "Auto commands
 autocmd BufRead,BufWritePre *.html normal gg=G
